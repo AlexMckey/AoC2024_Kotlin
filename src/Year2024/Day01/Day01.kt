@@ -23,7 +23,8 @@ object Day01 : DayOf2024(1, "Historian Hysteria") {
 
     override fun second(): Any? {
         val (ids1, ids2) = readInput()
-        val ids2Cnt = ids2.groupingBy { it }.eachCount()
+        //val ids2Cnt = ids2.groupingBy { it }.eachCount()
+        val ids2Cnt = ids2.groupCount()
         return ids1.sumOf { it * ids2Cnt.getOrDefault(it, 0) }
     }
 }
